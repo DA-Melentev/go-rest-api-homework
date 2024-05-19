@@ -44,7 +44,7 @@ var tasks = map[string]Task{
 // Ниже напишите обработчики для каждого эндпоинта
 // ...
 func getTasks(w http.ResponseWriter, r *http.Request) {
-	var taskErray []Task
+	taskErray := make([]Task, 0, len(tasks))
 	for _, task := range tasks {
 		taskErray = append(taskErray, task)
 	}
