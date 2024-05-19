@@ -91,6 +91,7 @@ func postTask(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	task, ok := tasks[task.ID]
 	if ok {
 		http.Error(w, "Задача с таким ID уже существует", http.StatusBadRequest)
 		return
